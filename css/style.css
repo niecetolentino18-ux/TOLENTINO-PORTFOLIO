@@ -4,16 +4,39 @@
   --brand-dark: #4f23b3;
   --ink: #1f1b2d;
 }
+/* Beau Regular — drop your file as fonts/Beau-Regular.ttf (and optional .woff2) */
+@font-face {
+  font-family: "Beau Regular";
+  src: url("../fonts/Beau-Regular.woff2") format("woff2"),
+       url("../fonts/Beau-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+h1, h2, h3, h4, h5, h6,
+.navbar-brand, .display-4, .display-5 {
+  font-family: "Beau Regular", Georgia, "Times New Roman", serif;
+  letter-spacing: .2px;
+}
 body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; color: var(--ink); }
 .jumbotron-hero {
-  background: linear-gradient(135deg, #6c3ce0 0%, #9d6bff 45%, #ffc1e3 100%);
+  /* Same layout — only background becomes your photo + transparent overlay */
+  background:
+    linear-gradient(rgba(28, 16, 54, 0.55), rgba(108, 60, 224, 0.45)),
+    url("../images/jumbotron-bg.jpg") center / cover no-repeat,
+    linear-gradient(135deg, #6c3ce0 0%, #9d6bff 45%, #ffc1e3 100%);
   color: #fff;
   border: 0;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 .jumbotron-hero .lead { color: #f4efff; }
 .jumbotron-sub {
-  background: linear-gradient(135deg, #2b2350 0%, #6c3ce0 100%);
+  background:
+    linear-gradient(rgba(28, 16, 54, 0.62), rgba(108, 60, 224, 0.5)),
+    url("../images/jumbotron-bg.jpg") center / cover no-repeat,
+    linear-gradient(135deg, #2b2350 0%, #6c3ce0 100%);
   color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,.35);
 }
 .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
 .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(76,35,179,.18); }
