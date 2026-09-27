@@ -1,0 +1,37 @@
+/* Niece R. Tolentino Portfolio — custom styles on top of Bootstrap 5 */
+:root {
+  --brand: #6c3ce0;
+  --brand-dark: #4f23b3;
+  --ink: #1f1b2d;
+}
+body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; color: var(--ink); }
+.jumbotron-hero {
+  background: linear-gradient(135deg, #6c3ce0 0%, #9d6bff 45%, #ffc1e3 100%);
+  color: #fff;
+  border: 0;
+}
+.jumbotron-hero .lead { color: #f4efff; }
+.jumbotron-sub {
+  background: linear-gradient(135deg, #2b2350 0%, #6c3ce0 100%);
+  color: #fff;
+}
+.card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(76,35,179,.18); }
+.skill-badge { background: #efe8ff; color: #4f23b3; }
+footer a { color: #cfc2ff; }
+.gallery-tile {
+  height: 180px;
+  border-radius: .75rem;
+  display: flex;
+  align-items: end;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 600;
+  background-size: cover;
+}
+.tile-1 { background: linear-gradient(135deg,#6c3ce0,#ff7ab8); }
+.tile-2 { background: linear-gradient(135deg,#1d976c,#93f9b9); color:#08351f; }
+.tile-3 { background: linear-gradient(135deg,#232526,#414345); }
+.tile-4 { background: linear-gradient(135deg,#ff512f,#dd2476); }
+.tile-5 { background: linear-gradient(135deg,#2193b0,#6dd5ed); }
+.tile-6 { background: linear-gradient(135deg,#834d9b,#d04ed6); }
