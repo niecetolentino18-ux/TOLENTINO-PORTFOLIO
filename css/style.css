@@ -1,8 +1,10 @@
-/* Niece R. Tolentino Portfolio — custom styles on top of Bootstrap 5 */
+/* Niece R. Tolentino Portfolio — animation-style theme, all Beau Regular */
 :root {
   --brand: #6c3ce0;
   --brand-dark: #4f23b3;
   --ink: #1f1b2d;
+  --pop-yellow: #ffd23f;
+  --pop-pink: #ff7ab8;
 }
 /* Beau Regular — drop your file as fonts/Beau-Regular.ttf (and optional .woff2) */
 @font-face {
@@ -13,48 +15,95 @@
   font-style: normal;
   font-display: swap;
 }
-h1, h2, h3, h4, h5, h6,
-.navbar-brand, .display-4, .display-5 {
-  font-family: "Beau Regular", Georgia, "Times New Roman", serif;
+/* ALL fonts → Beau Regular */
+html body, html body *, .navbar, .btn, .card, footer,
+h1, h2, h3, h4, h5, h6, .navbar-brand, .display-4, .display-5 {
+  font-family: "Beau Regular", Georgia, "Times New Roman", serif !important;
   letter-spacing: .2px;
 }
-body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; color: var(--ink); }
+body { color: var(--ink); background: #fff8fd; }
+
+/* ---------- Jumbotron: face centered, transparent, animated ---------- */
 .jumbotron-hero {
-  /* Same layout — only background becomes your photo + transparent overlay */
   background:
-    linear-gradient(rgba(28, 16, 54, 0.55), rgba(108, 60, 224, 0.45)),
-    url("../images/jumbotron-bg.png") center / cover no-repeat,
+    linear-gradient(rgba(28, 16, 54, 0.52), rgba(108, 60, 224, 0.42)),
+    url("../images/jumbotron-bg.png") 50% 28% / cover no-repeat,
     linear-gradient(135deg, #6c3ce0 0%, #9d6bff 45%, #ffc1e3 100%);
   color: #fff;
-  border: 0;
-  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+  border: 3px solid #fff;
+  outline: 3px dashed var(--pop-yellow);
+  outline-offset: -12px;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
+  overflow: hidden;
+  animation: heroGlow 6s ease-in-out infinite alternate;
 }
-.jumbotron-hero .lead { color: #f4efff; }
+.jumbotron-hero .lead { color: #fff; font-weight: 700; }
+.jumbotron-hero h1 {
+  animation: popIn .8s cubic-bezier(.2,1.6,.4,1) both;
+  text-shadow: 3px 3px 0 var(--brand-dark), 0 6px 18px rgba(0,0,0,.4);
+}
+.jumbotron-hero .btn { animation: fadeUp 1s .3s both; }
 .jumbotron-sub {
   background:
-    linear-gradient(rgba(28, 16, 54, 0.62), rgba(108, 60, 224, 0.5)),
-    url("../images/jumbotron-bg.png") center / cover no-repeat,
+    linear-gradient(rgba(28, 16, 54, 0.6), rgba(108, 60, 224, 0.48)),
+    url("../images/jumbotron-bg.png") 50% 28% / cover no-repeat,
     linear-gradient(135deg, #2b2350 0%, #6c3ce0 100%);
   color: #fff;
-  text-shadow: 0 2px 12px rgba(0,0,0,.35);
+  border: 3px solid #fff;
+  outline: 3px dashed var(--pop-yellow);
+  outline-offset: -12px;
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
+  animation: heroGlow 6s ease-in-out infinite alternate;
 }
-.card-hover { transition: transform .2s ease, box-shadow .2s ease; }
-.card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(76,35,179,.18); }
-.skill-badge { background: #efe8ff; color: #4f23b3; }
-footer a { color: #cfc2ff; }
+.jumbotron-sub h1 { animation: popIn .7s cubic-bezier(.2,1.6,.4,1) both; }
+
+/* ---------- Animation-style components ---------- */
+.card-hover { transition: transform .25s ease, box-shadow .25s ease, rotate .25s ease; animation: fadeUp .7s both; }
+.card-hover:hover { transform: translateY(-6px) rotate(-.5deg) scale(1.01); box-shadow: 0 16px 34px rgba(108,60,224,.25); }
+.card { border-radius: 1rem; border: 2px solid #efe6ff; }
+.btn {
+  border-radius: 999px !important;
+  border-width: 2px !important;
+  font-weight: 700 !important;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+.btn-light { border-color: var(--pop-yellow) !important; }
+.skill-badge { background: #efe8ff; color: #4f23b3; border: 1.5px solid var(--brand); animation: floaty 3s ease-in-out infinite; }
+.navbar-brand { animation: wiggle 4s ease-in-out infinite; }
+footer { background: linear-gradient(135deg,#241b45,#6c3ce0) !important; }
+footer a { color: #ffe98a; }
 .gallery-tile {
   height: 180px;
-  border-radius: .75rem;
+  border-radius: 1rem;
   display: flex;
   align-items: end;
   padding: 1rem;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   background-size: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  animation: floaty 4s ease-in-out infinite;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
 }
+.gallery-tile:nth-child(odd) { animation-delay: .6s; }
 .tile-1 { background: linear-gradient(135deg,#6c3ce0,#ff7ab8); }
-.tile-2 { background: linear-gradient(135deg,#1d976c,#93f9b9); color:#08351f; }
+.tile-2 { background: linear-gradient(135deg,#1d976c,#93f9b9); color:#08351f; text-shadow:none; }
 .tile-3 { background: linear-gradient(135deg,#232526,#414345); }
 .tile-4 { background: linear-gradient(135deg,#ff512f,#dd2476); }
 .tile-5 { background: linear-gradient(135deg,#2193b0,#6dd5ed); }
 .tile-6 { background: linear-gradient(135deg,#834d9b,#d04ed6); }
+.progress-bar { animation: loadBar 1.4s ease both; }
+
+/* ---------- Keyframes ---------- */
+@keyframes popIn { from { opacity: 0; transform: scale(.85) translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes wiggle { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-1.2deg); } 75% { transform: rotate(1.2deg); } }
+@keyframes heroGlow { from { box-shadow: 0 0 0 rgba(255,210,63,0); } to { box-shadow: 0 14px 44px rgba(108,60,224,.35); } }
+@keyframes loadBar { from { width: 0; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
