@@ -16,7 +16,7 @@
       var m = document.getElementById("cMsg").value.trim();
       var subject = encodeURIComponent("Portfolio inquiry from " + n);
       var body = encodeURIComponent("Name: " + n + "\nEmail: " + em + "\n\n" + m);
-      location.href = "mailto:niece.tolentino@example.com?subject=" + subject + "&body=" + body;
+      location.href = "mailto:niecetolentino@nmsc.edu.ph?subject=" + subject + "&body=" + body;
     });
   }
 })();
