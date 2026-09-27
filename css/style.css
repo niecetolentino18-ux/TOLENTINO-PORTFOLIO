@@ -63,6 +63,8 @@ footer a:hover { color: var(--white); }
 .card.text-bg-dark { background: var(--brown-dark) !important; color: var(--white); border-color: var(--brown-dark); }
 .card.text-bg-dark h2 { color: var(--white); }
 .skill-badge { background: var(--nude); color: var(--brown-dark); border: 1px solid var(--brown); font-weight: 700; }
+/* All small tag boxes under cards → same earth color (overrides Bootstrap text-bg-*) */
+.card .badge { background: var(--nude) !important; color: var(--brown-dark) !important; border: 1px solid var(--brown); font-weight: 700; }
 .btn { border-radius: .6rem; font-weight: 700; }
 .btn-light { background: var(--beige); border: 1px solid var(--khaki); color: var(--brown-dark); }
 .btn-outline-light { border: 1px solid var(--white); color: var(--white); }
