@@ -23,7 +23,7 @@ body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; col
   /* Same layout — only background becomes your photo + transparent overlay */
   background:
     linear-gradient(rgba(28, 16, 54, 0.55), rgba(108, 60, 224, 0.45)),
-    url("../images/jumbotron-bg.jpg") center / cover no-repeat,
+    url("../images/jumbotron-bg.png") center / cover no-repeat,
     linear-gradient(135deg, #6c3ce0 0%, #9d6bff 45%, #ffc1e3 100%);
   color: #fff;
   border: 0;
@@ -33,7 +33,7 @@ body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; col
 .jumbotron-sub {
   background:
     linear-gradient(rgba(28, 16, 54, 0.62), rgba(108, 60, 224, 0.5)),
-    url("../images/jumbotron-bg.jpg") center / cover no-repeat,
+    url("../images/jumbotron-bg.png") center / cover no-repeat,
     linear-gradient(135deg, #2b2350 0%, #6c3ce0 100%);
   color: #fff;
   text-shadow: 0 2px 12px rgba(0,0,0,.35);
