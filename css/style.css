@@ -85,6 +85,35 @@ footer a:hover { color: var(--white); }
   border: 1px solid var(--khaki);
 }
 .tile-1 { background: linear-gradient(135deg, var(--brown), var(--nude)); color: var(--white); text-shadow: 0 1px 6px rgba(0,0,0,.5); }
+/* Boxes with photos */
+.gallery-tile.has-photos {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  padding: 0;
+  height: auto;
+  min-height: 180px;
+  overflow: hidden;
+}
+.tile-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  padding: 8px 8px 0 8px;
+}
+.tile-photos a { display: block; overflow: hidden; border-radius: .6rem; }
+.tile-photos img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  border-radius: .6rem;
+  border: 1px solid rgba(255,255,255,.7);
+  transition: transform .2s ease;
+}
+.tile-photos a:hover img { transform: scale(1.05); }
+.gallery-tile.has-photos span { padding: 0.75rem 1rem 1rem 1rem; }
+.tile-2.has-photos .tile-photos img, .tile-4.has-photos .tile-photos img, .tile-5.has-photos .tile-photos img { border-color: var(--brown); }
 .tile-2 { background: linear-gradient(135deg, var(--beige), var(--nude)); color: var(--brown-dark); }
 .tile-3 { background: linear-gradient(135deg, var(--black), var(--brown)); color: var(--white); text-shadow: 0 1px 6px rgba(0,0,0,.5); }
 .tile-4 { background: linear-gradient(135deg, var(--nude), var(--white)); color: var(--brown-dark); }
